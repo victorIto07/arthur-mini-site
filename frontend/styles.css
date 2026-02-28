@@ -1,0 +1,144 @@
+* {
+  min-height: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+    circle at 50% 120%,
+    #4169e1 -50%,
+    #141a2d 70%
+  );
+}
+
+.stage {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 1rem);
+  transform: translateX(-50%);
+  margin: 0;
+  color: #eaf2ff;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  line-height: 1;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: min(500px, 90vw);
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(196, 216, 255, 0.16);
+  backdrop-filter: blur(8px) saturate(118%);
+  -webkit-backdrop-filter: blur(8px) saturate(118%);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, rgba(205, 225, 255, 0.22), rgba(255, 255, 255, 0.03)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  opacity: 0.24;
+}
+
+.card input {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid rgba(213, 223, 255, 0.9);
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 1rem;
+  outline: none;
+}
+
+.card input:focus {
+  border-color: #bfdbfe;
+  box-shadow: 0 0 0 3px rgba(191, 219, 254, 0.45);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.add {
+  background: #c9f3d4;
+  border-color: #b8e8c4;
+  color: #235c37;
+}
+
+.btn.remove {
+  background: #f8cfd3;
+  border-color: #efbec4;
+  color: #7a2d37;
+}
+
+.btn.update {
+  background: #cfe0ff;
+  border-color: #bdd3ff;
+  color: #224d9c;
+}
+
+#nomes {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.9rem;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+#nomes li {
+  padding: 0.65rem 0.2rem 0.65rem 0.85rem;
+  border-left: 3px solid rgba(173, 200, 255, 0.9);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #eaf2ff;
+  font-weight: 500;
+  box-shadow: inset 0 -1px 0 rgba(173, 200, 255, 0.25);
+}
